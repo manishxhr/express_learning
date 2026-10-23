@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Management</h1>
+
+        <!-- User Form -->
+
+        <div class="form-box">
+
+            <h2 id="formTitle">Add User</h2>
+
+            <form id="userForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter email"
+                    required
+                >
+
+                <button type="submit">
+                    Save User
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    style="display: none;"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Users Table -->
+
+        <div class="users-box">
+
+            <h2>Users</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="userTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
