@@ -1,20 +1,14 @@
-const mysql = require("mysql2");
 
-const db= mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "node_crud"
+const mysql = require("mysql2/promise");
+require("dotenv").config();
+
+const db = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: 10
 });
 
-db.connect((err) => {
-    if (err) {
-        console.log("Database connection failed");
-        console.log(err.message);
-        return;
-    }
-
-    console.log("MySQL connected successfully");
-});
-
-module.exports= db;
+module.exports = db;
